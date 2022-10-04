@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="eventusClassicos.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.8119994"
+     inkscape:cx="307.61031"
+     inkscape:cy="418.56339"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;stroke:#ffffff;stroke-width:0.230697px;-inkscape-stroke:none;stop-color:#000000"
+       id="rect333"
+       width="56.667854"
+       height="37.567299"
+       x="80.70771"
+       y="88.293427"
+       ry="12.124975"
+       inkscape:export-filename="rect333.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-size:14.1111px;line-height:1.25;font-family:sans-serif;fill:#ffffff;stroke-width:0.264583"
+       x="83.095818"
+       y="104.08513"
+       id="text63"><tspan
+         sodipodi:role="line"
+         x="83.095818"
+         y="104.08513"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:Z003;-inkscape-font-specification:Z003;fill:#ffffff;stroke-width:0.264583"
+         id="tspan65">Eventus</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14.1111px;line-height:1.25;font-family:sans-serif;fill:#ffff00;stroke-width:0.264583"
+       x="90.552719"
+       y="115.98711"
+       id="text71"><tspan
+         sodipodi:role="line"
+         id="tspan69"
+         x="90.552719"
+         y="115.98711"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:Z003;-inkscape-font-specification:Z003;fill:#ffff00;stroke-width:0.264583">Clássicos</tspan></text>
+  </g>
+</svg>
