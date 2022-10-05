@@ -9,8 +9,11 @@ class EventBinding implements Bindings {
     Get.lazyPut<EventRepository>(
       () => EventRepositoryB4a(),
     );
-    Get.put(EventController(
-      eventRepository: Get.find(),
-    ));
+    Get.put(
+      EventController(
+        eventRepository: Get.find(),
+      ),
+      permanent: true,
+    );
   }
 }

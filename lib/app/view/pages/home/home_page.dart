@@ -28,12 +28,25 @@ class HomePage extends StatelessWidget {
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ElevatedButton(
-            child: const Text('Vídeo de orientações'),
-            onPressed: () {
-              Get.toNamed(Routes.userProfile,
-                  arguments: _splashController.userModel!.profile);
-            },
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ElevatedButton(
+                child: const Text('Vídeo de orientações'),
+                onPressed: () {
+                  Get.toNamed(Routes.userProfile,
+                      arguments: _splashController.userModel!.profile);
+                },
+              ),
+              ElevatedButton(
+                child: const Text('Texto de orientações'),
+                onPressed: () {
+                  Get.toNamed(
+                    Routes.home + Routes.homeOrientation,
+                  );
+                },
+              ),
+            ],
           ),
           Card(
             child: ListTile(

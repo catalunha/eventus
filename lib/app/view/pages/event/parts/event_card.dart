@@ -1,5 +1,6 @@
 import 'package:eventus/app/core/models/event_model.dart';
 import 'package:eventus/app/view/controllers/event/event_controller.dart';
+import 'package:eventus/app/view/pages/utils/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,6 +15,11 @@ class EventCard extends StatelessWidget {
     return Card(
       child: Column(
         children: [
+          eventModel.photo != null && eventModel.photo!.isNotEmpty
+              ? Image.network(
+                  eventModel.photo!,
+                )
+              : Image.asset(AppAssets.splash),
           ListTile(
             title: Text(eventModel.name ?? '...'),
             // subtitle: Text(eventModel.boss!),

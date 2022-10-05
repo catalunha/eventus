@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
+import 'package:eventus/app/core/models/child_model.dart';
 import 'package:eventus/app/core/models/community_model.dart';
-import 'package:eventus/app/core/models/person_model.dart';
 
 // Perfil de usuario ou pessoa
 class ProfileModel {
@@ -19,8 +19,8 @@ class ProfileModel {
   final bool? isFemale;
   final DateTime? birthday;
   final String? description;
-  final PersonModel? partner;
-  final List<PersonModel>? children;
+  final ProfileModel? partner;
+  final List<ChildModel>? children;
 
   final CommunityModel? community;
   final bool? isActive;
@@ -58,8 +58,8 @@ class ProfileModel {
     bool? isFemale,
     DateTime? birthday,
     String? description,
-    PersonModel? partner,
-    List<PersonModel>? children,
+    ProfileModel? partner,
+    List<ChildModel>? children,
     CommunityModel? community,
     bool? isActive,
     List<String>? routes,
@@ -160,10 +160,10 @@ class ProfileModel {
           : null,
       description: map['description'],
       partner:
-          map['partner'] != null ? PersonModel.fromMap(map['partner']) : null,
+          map['partner'] != null ? ProfileModel.fromMap(map['partner']) : null,
       children: map['children'] != null
-          ? List<PersonModel>.from(
-              map['children']?.map((x) => PersonModel.fromMap(x)))
+          ? List<ChildModel>.from(
+              map['children']?.map((x) => ChildModel.fromMap(x)))
           : null,
       community: map['community'] != null
           ? CommunityModel.fromMap(map['community'])

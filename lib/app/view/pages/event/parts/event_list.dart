@@ -10,7 +10,7 @@ class EventList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => Column(children: list()));
+    return Obx(() => SingleChildScrollView(child: Column(children: list())));
   }
 
   List<Widget> list() {

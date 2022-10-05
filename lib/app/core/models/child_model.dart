@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:eventus/app/core/models/community_model.dart';
 
 // Perfil da criança
-class PersonModel {
+class ChildModel {
   final String? id;
   final CommunityModel community;
   final String? email;
@@ -15,7 +15,7 @@ class PersonModel {
   final DateTime? birthday;
   final String? description;
   final bool? isDeleted;
-  PersonModel({
+  ChildModel({
     this.id,
     required this.community,
     this.email,
@@ -29,7 +29,7 @@ class PersonModel {
     this.isDeleted,
   });
 
-  PersonModel copyWith({
+  ChildModel copyWith({
     String? id,
     CommunityModel? community,
     String? email,
@@ -42,7 +42,7 @@ class PersonModel {
     String? description,
     bool? isDeleted,
   }) {
-    return PersonModel(
+    return ChildModel(
       id: id ?? this.id,
       community: community ?? this.community,
       email: email ?? this.email,
@@ -95,8 +95,8 @@ class PersonModel {
     return result;
   }
 
-  factory PersonModel.fromMap(Map<String, dynamic> map) {
-    return PersonModel(
+  factory ChildModel.fromMap(Map<String, dynamic> map) {
+    return ChildModel(
       id: map['id'],
       community: CommunityModel.fromMap(map['community']),
       email: map['email'],
@@ -115,19 +115,19 @@ class PersonModel {
 
   String toJson() => json.encode(toMap());
 
-  factory PersonModel.fromJson(String source) =>
-      PersonModel.fromMap(json.decode(source));
+  factory ChildModel.fromJson(String source) =>
+      ChildModel.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'PersonModel(id: $id, community: $community, email: $email, name: $name, phone: $phone, photo: $photo, cpf: $cpf, isFemale: $isFemale, birthday: $birthday, description: $description, isDeleted: $isDeleted)';
+    return 'ChildModel(id: $id, community: $community, email: $email, name: $name, phone: $phone, photo: $photo, cpf: $cpf, isFemale: $isFemale, birthday: $birthday, description: $description, isDeleted: $isDeleted)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is PersonModel &&
+    return other is ChildModel &&
         other.id == id &&
         other.community == community &&
         other.email == email &&

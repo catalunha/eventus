@@ -2,8 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
+import 'package:eventus/app/core/models/child_model.dart';
 import 'package:eventus/app/core/models/event_model.dart';
-import 'package:eventus/app/core/models/person_model.dart';
+import 'package:eventus/app/core/models/profile_model.dart';
 import 'package:eventus/app/core/models/question_model.dart';
 import 'package:eventus/app/core/models/user_model.dart';
 
@@ -13,9 +14,9 @@ class ParticipantModel {
   final EventModel event;
   final UserModel? user;
   final bool? forMe;
-  final PersonModel? forMyPartner;
-  final List<PersonModel> myChildren;
-  final Map<String, Question> questions;
+  final ProfileModel? forMyPartner;
+  final List<ChildModel>? myChildren;
+  final Map<String, Question>? questions;
   final String? paymentVoucher;
   final String? pendencies;
   final bool? seePending;
@@ -35,8 +36,8 @@ class ParticipantModel {
     this.user,
     this.forMe,
     this.forMyPartner,
-    required this.myChildren,
-    required this.questions,
+    this.myChildren,
+    this.questions,
     this.paymentVoucher,
     this.pendencies,
     this.seePending,
@@ -49,8 +50,8 @@ class ParticipantModel {
     EventModel? event,
     UserModel? user,
     bool? forMe,
-    PersonModel? forMyPartner,
-    List<PersonModel>? myChildren,
+    ProfileModel? forMyPartner,
+    List<ChildModel>? myChildren,
     Map<String, Question>? questions,
     String? paymentVoucher,
     String? pendencies,
@@ -90,8 +91,12 @@ class ParticipantModel {
     if (forMyPartner != null) {
       result.addAll({'forMyPartner': forMyPartner!.toMap()});
     }
-    result.addAll({'myChildren': myChildren.map((x) => x.toMap()).toList()});
-    result.addAll({'questions': questions});
+    if (myChildren != null) {
+      result.addAll({'myChildren': myChildren!.map((x) => x.toMap()).toList()});
+    }
+    if (questions != null) {
+      result.addAll({'questions': questions});
+    }
     if (paymentVoucher != null) {
       result.addAll({'paymentVoucher': paymentVoucher});
     }
@@ -118,10 +123,12 @@ class ParticipantModel {
       user: map['user'] != null ? UserModel.fromMap(map['user']) : null,
       forMe: map['forMe'],
       forMyPartner: map['forMyPartner'] != null
-          ? PersonModel.fromMap(map['forMyPartner'])
+          ? ProfileModel.fromMap(map['forMyPartner'])
           : null,
-      myChildren: List<PersonModel>.from(
-          map['myChildren']?.map((x) => PersonModel.fromMap(x))),
+      myChildren: map['myChildren'] != null
+          ? List<ChildModel>.from(
+              map['myChildren']?.map((x) => ChildModel.fromMap(x)))
+          : null,
       questions: Map<String, Question>.from(map['questions']),
       paymentVoucher: map['paymentVoucher'],
       pendencies: map['pendencies'],

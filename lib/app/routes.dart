@@ -9,6 +9,7 @@ import 'package:eventus/app/view/pages/auth/register/email/auth_register_email.p
 import 'package:eventus/app/view/pages/auth/splash/splash_page.dart';
 import 'package:eventus/app/view/pages/event/event_page.dart';
 import 'package:eventus/app/view/pages/home/home_page.dart';
+import 'package:eventus/app/view/pages/home/parts/orientation.dart';
 import 'package:eventus/app/view/pages/profile/profile_page.dart';
 import 'package:get/get.dart';
 
@@ -19,6 +20,7 @@ class Routes {
   static const authRegisterEmail = '/auth/register/email';
 
   static const home = '/home';
+  static const homeOrientation = '/orientation';
 
   static const userProfile = '/user/profile';
 
@@ -41,10 +43,12 @@ class Routes {
       page: () => AuthRegisterEmailPage(),
     ),
     GetPage(
-      name: Routes.home,
-      binding: HomeDependencies(),
-      page: () => HomePage(),
-    ),
+        name: Routes.home,
+        binding: HomeDependencies(),
+        page: () => HomePage(),
+        children: [
+          GetPage(name: Routes.homeOrientation, page: () => const Orientation())
+        ]),
     GetPage(
       name: Routes.userProfile,
       binding: UserProfileDependencies(),
