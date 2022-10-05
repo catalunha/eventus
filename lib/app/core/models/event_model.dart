@@ -14,12 +14,12 @@ class EventModel {
   final String? photo;
   final int? vacancies;
   final List<String>? participants;
-  final Map<String, QuestionModel>? questions;
+  final Map<String, Question>? questions;
 
   final bool? isDeleted;
   EventModel({
     this.id,
-    required this.community,
+    this.community,
     this.isPublic,
     this.name,
     this.description,
@@ -39,7 +39,7 @@ class EventModel {
     String? photo,
     int? vacancies,
     List<String>? participants,
-    Map<String, QuestionModel>? questions,
+    Map<String, Question>? questions,
     bool? isDeleted,
   }) {
     return EventModel(
@@ -105,7 +105,7 @@ class EventModel {
       photo: map['photo'],
       vacancies: map['vacancies']?.toInt(),
       participants: List<String>.from(map['participants']),
-      questions: Map<String, QuestionModel>.from(map['questions']),
+      questions: Map<String, Question>.from(map['questions']),
       isDeleted: map['isDeleted'],
     );
   }

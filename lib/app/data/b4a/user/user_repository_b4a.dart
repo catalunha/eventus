@@ -11,7 +11,12 @@ class UserRepositoryB4a extends GetxService implements UserRepository {
     QueryBuilder<ParseObject> query =
         QueryBuilder<ParseObject>(ParseObject(UserEntity.className));
     query.whereEqualTo('email', email);
-    query.includeObject(['profile']);
+    print('+++++++++++++++++');
+    print('+++++++++++++++++');
+    print('readByEmail');
+    print('+++++++++++++++++');
+    print('+++++++++++++++++');
+    query.includeObject(['profile', 'profile.community']);
     query.first();
     final ParseResponse response;
     try {

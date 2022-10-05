@@ -15,7 +15,7 @@ class ParticipantModel {
   final bool? forMe;
   final PersonModel? forMyPartner;
   final List<PersonModel> myChildren;
-  final Map<String, QuestionModel> questions;
+  final Map<String, Question> questions;
   final String? paymentVoucher;
   final String? pendencies;
   final bool? seePending;
@@ -51,7 +51,7 @@ class ParticipantModel {
     bool? forMe,
     PersonModel? forMyPartner,
     List<PersonModel>? myChildren,
-    Map<String, QuestionModel>? questions,
+    Map<String, Question>? questions,
     String? paymentVoucher,
     String? pendencies,
     bool? seePending,
@@ -122,7 +122,7 @@ class ParticipantModel {
           : null,
       myChildren: List<PersonModel>.from(
           map['myChildren']?.map((x) => PersonModel.fromMap(x))),
-      questions: Map<String, QuestionModel>.from(map['questions']),
+      questions: Map<String, Question>.from(map['questions']),
       paymentVoucher: map['paymentVoucher'],
       pendencies: map['pendencies'],
       seePending: map['seePending'],

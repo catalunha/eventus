@@ -13,7 +13,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Obx(() => Text(
-            "Olá, ${_splashController.userModel!.profile!.name ?? 'Atualize seu perfil.'}.")),
+            "Olá, ${_splashController.userModel!.profile!.community?.name ?? 'Atualize seu perfil.'}.")),
+        // title: Obx(() => Text(
+        //     "Olá, ${_splashController.userModel!.profile!.name ?? 'Atualize seu perfil.'}.")),
         actions: [
           IconButton(
             onPressed: () {
@@ -69,8 +71,7 @@ class HomePage extends StatelessWidget {
               title: const Text('2º Passo'),
               subtitle: const Text('Escolher seu treinamento ou palestra.'),
               onTap: () {
-                Get.toNamed(Routes.userProfile,
-                    arguments: _splashController.userModel!.profile);
+                Get.toNamed(Routes.event);
               },
             ),
           )

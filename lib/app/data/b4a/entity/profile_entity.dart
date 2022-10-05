@@ -1,10 +1,16 @@
 import 'package:eventus/app/core/models/profile_model.dart';
+import 'package:eventus/app/data/b4a/entity/community_entity.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 
 class ProfileEntity {
   static const String className = 'Profile';
 
   ProfileModel fromParse(ParseObject parseObject) {
+    print('=======================');
+    print('=======================');
+    print(parseObject.get('community'));
+    print('=======================');
+    print('=======================');
     ProfileModel ProfileEntity = ProfileModel(
       id: parseObject.objectId!,
       name: parseObject.get('name'),
@@ -13,6 +19,9 @@ class ProfileEntity {
       // photo: parseObject.get('photo')?.get('url'),
       email: parseObject.get('email'),
       isActive: parseObject.get('isActive'),
+      community: parseObject.get('community') != null
+          ? CommunityEntity().fromParse(parseObject.get('community'))
+          : null,
     );
     return ProfileEntity;
   }

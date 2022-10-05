@@ -1,18 +1,18 @@
 import 'dart:convert';
 
-class QuestionModel {
+class Question {
   final String? text;
   final bool? response;
-  QuestionModel({
+  Question({
     this.text,
     this.response,
   });
 
-  QuestionModel copyWith({
+  Question copyWith({
     String? text,
     bool? response,
   }) {
-    return QuestionModel(
+    return Question(
       text: text ?? this.text,
       response: response ?? this.response,
     );
@@ -31,8 +31,8 @@ class QuestionModel {
     return result;
   }
 
-  factory QuestionModel.fromMap(Map<String, dynamic> map) {
-    return QuestionModel(
+  factory Question.fromMap(Map<String, dynamic> map) {
+    return Question(
       text: map['text'],
       response: map['response'],
     );
@@ -40,8 +40,8 @@ class QuestionModel {
 
   String toJson() => json.encode(toMap());
 
-  factory QuestionModel.fromJson(String source) =>
-      QuestionModel.fromMap(json.decode(source));
+  factory Question.fromJson(String source) =>
+      Question.fromMap(json.decode(source));
 
   @override
   String toString() => 'QuestionModel(text: $text, response: $response)';
@@ -50,7 +50,7 @@ class QuestionModel {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is QuestionModel &&
+    return other is Question &&
         other.text == text &&
         other.response == response;
   }
